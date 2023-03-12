@@ -26,8 +26,24 @@ console.log(twoDimensionalProduct(arr2)); // 88
 */
 
 let twoDimensionalProduct = function(arr) {
-    // Your code here
+	const product = arr.reduce((accum, el) => {
+		if(Array.isArray(el)) {
+		 const spreadEl = el.reduce((accum, num) => accum * num);
+
+		 return accum * spreadEl;
+		}
+
+		return accum * el;
+	}, 1)
+
+	return product;
 };
+
+let arr2 = [
+	[11, 4],
+	[2]
+  ];
+  console.log(twoDimensionalProduct(arr2))
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {

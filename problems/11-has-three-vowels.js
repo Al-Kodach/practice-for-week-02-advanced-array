@@ -17,26 +17,20 @@ console.log(hasThreeVowels('go home'));         //  false
 */
 
 let hasThreeVowels = function(string) {
-    const words = string.split(' ');
-    let vowels = 'aieou';
+    let vowels = 'aeiou';
+    let has3 = [];
 
-    const threeOrMoreVowels = words.filter(word  => {
-     return word.split('').forEach(el => vowels.includes(el))
+  string.split('').forEach(el => {
+    if(vowels.includes(el) && !has3.includes(el)) {
+        has3.push(el);
+    }
+  });
 
-    });
-
-    return threeOrMoreVowels;
+  return has3.length > 2;
 };
 
-function vowelsCounter(word) {
-    const word = string.split('');
-    let vowels = 'aieou';
 
-    const count = word.forEach(el => vowels.includes(el),[]);
-    return count;
-
-}
-
+//console.log(hasThreeVowels('go home'));
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {

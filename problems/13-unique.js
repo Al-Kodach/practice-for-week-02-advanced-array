@@ -15,13 +15,20 @@ console.log(unique(['a', 'b', 'c', 'b'])); // ['a', 'b', 'c']
 */
 
 let unique = function(array) {
-    // Your code here
-};
+    let uni = [];
+    array.map(el => {
+        if(!uni.includes(el)) {
+            uni.push(el);
+        }
+    });
 
+   return uni;
+};
+console.log(unique(['a', 'b', 'c', 'b']));
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
     module.exports = unique;
 } catch (e) {
     module.exports = null;
-}
+}
